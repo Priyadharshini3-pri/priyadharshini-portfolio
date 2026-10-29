@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PRIYADHARSHINI — The Series | Full-Stack & AI/ML Portfolio</title>
+  <meta name="description" content="Cinematic streaming-inspired developer portfolio of Priyadharshini S — Full-Stack Developer, Machine Learning Engineer, and IT Undergraduate.">
+  <meta name="keywords" content="Priyadharshini S, Portfolio, Full-Stack Developer, Machine Learning, React, FastAPI, Python, Tommy Hub">
+  <meta name="author" content="Priyadharshini S">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎬</text></svg>">
+
+  <!-- Google Fonts: Bebas Neue for Cinematic Netflix-style headlines, Inter for sleek body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="netflix-dark">
+
+  <!-- Top Ambient Glow -->
+  <div class="ambient-glow" aria-hidden="true"></div>
+
+  <!-- NAVIGATION BAR -->
+  <header class="navbar" id="navbar">
+    <div class="nav-left">
+      <a href="#hero" class="brand-logo" aria-label="Priyadharshini Home">
+        <span class="logo-red">PRIYADHARSHINI</span>
+        <span class="logo-badge">SERIES</span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#hero" class="nav-link active"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="#originals" class="nav-link"><i class="fa-solid fa-fire"></i> Originals</a>
+        <a href="#episodes" class="nav-link"><i class="fa-solid fa-film"></i> Episodes</a>
+        <a href="#cast-skills" class="nav-link"><i class="fa-solid fa-layer-group"></i> Skills</a>
+        <a href="#certifications" class="nav-link"><i class="fa-solid fa-award"></i> Awards</a>
+        <a href="#contact" class="nav-link"><i class="fa-solid fa-paper-plane"></i> Contact</a>
+      </nav>
+    </div>
+
+    <div class="nav-right">
+      <!-- Search Trigger -->
+      <div class="search-box">
+        <button id="searchBtn" class="icon-btn" title="Search titles, skills, stack">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <input type="text" id="searchInput" placeholder="Search projects, skills..." aria-label="Search">
+      </div>
+
+      <!-- Sound FX Toggle -->
+      <button id="soundToggleBtn" class="icon-btn" title="Toggle Cinema Sound FX (Ta-Dum)">
+        <i class="fa-solid fa-volume-high" id="soundIcon"></i>
+      </button>
+
+      <!-- Resume Button -->
+      <a href="#resume-modal" id="viewResumeBtn" class="btn btn-outline-nav">
+        <i class="fa-solid fa-file-pdf"></i> Resume
+      </a>
+
+      <!-- Profile Avatar -->
+      <div class="profile-menu" id="profileMenu">
+        <img src="assets/images/profile.jpg" alt="Priyadharshini Avatar" class="profile-avatar">
+        <span class="profile-caret"><i class="fa-solid fa-caret-down"></i></span>
+        <div class="profile-dropdown">
+          <div class="user-greeting">
+            <strong>Priyadharshini S</strong>
+            <span>priyadharshinis3006@gmail.com</span>
+          </div>
+          <div class="dropdown-divider"></div>
+          <a href="https://linkedin.com/in/priyadharshinisenthilkumar3006" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn Profile</a>
+          <a href="https://github.com/Priyadharshini3-pri" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub Profile</a>
+          <a href="tel:+916369804270"><i class="fa-solid fa-phone"></i> +91 6369804270</a>
+          <div class="dropdown-divider"></div>
+          <div class="profile-role-tag"><i class="fa-solid fa-check-circle"></i> Available for Full-Time Roles</div>
+        </div>
+      </div>
+
+      <!-- Mobile Hamburger -->
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- SEARCH OVERLAY RESULTS CONTAINER (Dynamic) -->
+  <div id="searchResultsPanel" class="search-results-panel hidden">
+    <div class="search-header">
+      <h3><i class="fa-solid fa-film"></i> Search Results</h3>
+      <button id="closeSearchPanel" class="close-btn">&times;</button>
+    </div>
+    <div id="searchResultsList" class="search-grid"></div>
+  </div>
+
+  <main>
+    <!-- HERO BILLBOARD SECTION -->
+    <section class="hero-billboard" id="hero">
+      <div class="hero-backdrop-container">
+        <div class="hero-overlay-gradient"></div>
+        <div class="hero-vignette"></div>
+        <img src="assets/images/profile.jpg" alt="Priyadharshini S Portrait" class="hero-portrait">
+      </div>
+
+      <div class="hero-content">
+        <div class="hero-meta-strip">
+          <span class="badge-brand"><i class="fa-solid fa-n"></i> ORIGINAL</span>
+          <span class="badge-top10"><i class="fa-solid fa-chart-line"></i> #1 IN TECH TALENT TODAY</span>
+          <span class="meta-item"><i class="fa-solid fa-star"></i> 99.4% MATCH</span>
+          <span class="meta-item age-badge">2026</span>
+          <span class="meta-item quality-badge">4K ULTRA HD</span>
+          <span class="meta-item audio-badge">5.1 SOUND</span>
+        </div>
+
+        <h1 class="hero-title">PRIYADHARSHINI S</h1>
+        <p class="hero-subtitle">B.Tech IT • Full-Stack Developer • ML & Data Analytics Innovator</p>
+
+        <p class="hero-synopsis">
+          Engineering scalable web architectures, AI-powered predictive systems, and high-velocity retail billing terminals. Driven by high-performance Python, React, FastAPI, SQL, and enterprise analytics with Power BI.
+        </p>
+
+        <div class="hero-tags">
+          <span class="tech-chip"><i class="fa-brands fa-react"></i> React</span>
+          <span class="tech-chip"><i class="fa-brands fa-python"></i> Python</span>
+          <span class="tech-chip"><i class="fa-solid fa-bolt"></i> FastAPI</span>
+          <span class="tech-chip"><i class="fa-solid fa-database"></i> Supabase</span>
+          <span class="tech-chip"><i class="fa-solid fa-chart-pie"></i> Power BI</span>
+          <span class="tech-chip"><i class="fa-solid fa-brain"></i> Machine Learning</span>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#originals" class="btn btn-play" id="heroPlayBtn">
+            <i class="fa-solid fa-play"></i> Explore Originals
+          </a>
+          <button class="btn btn-more-info" id="heroMoreInfoBtn">
+            <i class="fa-solid fa-circle-info"></i> More Info
+          </button>
+          <a href="#contact" class="btn btn-icon-round" title="Get in touch / Hire">
+            <i class="fa-solid fa-paper-plane"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: STREAMING STATS TICKER -->
+    <section class="streaming-ticker">
+      <div class="ticker-item">
+        <span class="ticker-number">8.0</span>
+        <span class="ticker-label">B.Tech CGPA / 10.0</span>
+      </div>
+      <div class="ticker-divider"></div>
+      <div class="ticker-item">
+        <span class="ticker-number">3+</span>
+        <span class="ticker-label">Production Web Deployments</span>
+      </div>
+      <div class="ticker-divider"></div>
+      <div class="ticker-item">
+        <span class="ticker-number">100%</span>
+        <span class="ticker-label">Internship Grade (Ether Infotech)</span>
+      </div>
+      <div class="ticker-divider"></div>
+      <div class="ticker-item">
+        <span class="ticker-number">2x</span>
+        <span class="ticker-label">Hackathon & Tech Winner</span>
+      </div>
+    </section>
+
+    <!-- ROW 1: PRIYADHARSHINI ORIGINALS (FEATURED PROJECTS) -->
+    <section class="shelf-section" id="originals">
+      <div class="shelf-header">
+        <h2 class="shelf-title">
+          <span class="shelf-highlight">Priyadharshini Originals</span>
+          <span class="shelf-sub">Top Rated Series & Deployments</span>
+        </h2>
+        <span class="shelf-explore">Explore All 3 Releases <i class="fa-solid fa-chevron-right"></i></span>
+      </div>
+
+      <div class="cards-carousel">
+        <!-- PROJECT 1: TOMMY HUB -->
+        <article class="media-card" data-title="Tommy Hub Billing Terminal" data-tags="react fastapi python supabase vercel billing sql">
+          <div class="card-thumb">
+            <div class="card-badge-top">SEASON 1 • ORIGINAL</div>
+            <div class="thumb-visual thumb-tommy">
+              <div class="project-card-header">
+                <i class="fa-solid fa-cash-register"></i>
+                <span class="brand-tag">POS & BILLING</span>
+              </div>
+              <h3 class="card-hero-name">TOMMY HUB</h3>
+              <p class="card-hero-sub">Retail Billing & Invoice Engine</p>
+              <div class="live-pulse">
+                <span class="pulse-dot"></span> LIVE ON VERCEL
+              </div>
+            </div>
+            <div class="card-rating">
+              <span class="match-score">99% Match</span>
+              <span class="age-pill">NEW</span>
+              <span class="def-pill">FULL STACK</span>
+            </div>
+          </div>
+          <div class="card-info">
+            <h4 class="card-title">TOMMY HUB Billing Terminal</h4>
+            <p class="card-desc">
+              Full-stack retail POS & invoice generation terminal supporting custom payment modes (Cash, UPI, Card), Supabase cloud database, and automated printable thermal invoices.
+            </p>
+            <div class="card-stack">
+              <span>React</span>
+              <span>FastAPI</span>
+              <span>Python</span>
+              <span>Supabase</span>
+              <span>Vercel</span>
+            </div>
+            <div class="card-actions">
+              <a href="https://tommy-hub.vercel.app/" target="_blank" rel="noopener" class="card-btn btn-stream">
+                <i class="fa-solid fa-play"></i> Watch Live
+              </a>
+              <button class="card-btn btn-details" onclick="openProjectModal('tommy-hub')">
+                <i class="fa-solid fa-circle-info"></i> Details
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 2: AI TOURIST TRIP PLANNER -->
+        <article class="media-card" data-title="AI Tourist Trip Planner" data-tags="ai chatbot travel javascript netlify html css itinerary">
+          <div class="card-thumb">
+            <div class="card-badge-top">AI SPECIAL • ORIGINAL</div>
+            <div class="thumb-visual thumb-trip">
+              <div class="project-card-header">
+                <i class="fa-solid fa-robot"></i>
+                <span class="brand-tag">AI ASSISTANT</span>
+              </div>
+              <h3 class="card-hero-name">AI TRIP PLANNER</h3>
+              <p class="card-hero-sub">Intelligent Itinerary Assistant</p>
+              <div class="live-pulse">
+                <span class="pulse-dot"></span> LIVE ON NETLIFY
+              </div>
+            </div>
+            <div class="card-rating">
+              <span class="match-score">98% Match</span>
+              <span class="age-pill">AI SPECIAL</span>
+              <span class="def-pill">CONVERSATIONAL</span>
+            </div>
+          </div>
+          <div class="card-info">
+            <h4 class="card-title">AI Tourist Trip Planner & Chatbot</h4>
+            <p class="card-desc">
+              Interactive conversational travel assistant that synthesizes personalized, multi-day travel itineraries and real-time recommendations tailored to individual preferences.
+            </p>
+            <div class="card-stack">
+              <span>HTML5</span>
+              <span>CSS3</span>
+              <span>JavaScript</span>
+              <span>AI API</span>
+              <span>Netlify</span>
+            </div>
+            <div class="card-actions">
+              <a href="https://697323ca9ce0ee43a18a0b77--fastidious-sunshine-62a883.netlify.app/" target="_blank" rel="noopener" class="card-btn btn-stream">
+                <i class="fa-solid fa-play"></i> Watch Live
+              </a>
+              <button class="card-btn btn-details" onclick="openProjectModal('trip-planner')">
+                <i class="fa-solid fa-circle-info"></i> Details
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 3: RESPONSIVE WELDING SHOP -->
+        <article class="media-card" data-title="Welding Shop Commercial Portal" data-tags="welding neocities responsive commercial business fabrication whatsapp">
+          <div class="card-thumb">
+            <div class="card-badge-top">COMMERCIAL • CLIENT</div>
+            <div class="thumb-visual thumb-welding">
+              <div class="project-card-header">
+                <i class="fa-solid fa-fire-burner"></i>
+                <span class="brand-tag">FABRICATION PORTAL</span>
+              </div>
+              <h3 class="card-hero-name">WELDING SHOP</h3>
+              <p class="card-hero-sub">Commercial Metal Works & Lead Hub</p>
+              <div class="live-pulse">
+                <span class="pulse-dot"></span> LIVE ON NEOCITIES
+              </div>
+            </div>
+            <div class="card-rating">
+              <span class="match-score">96% Match</span>
+              <span class="age-pill">BUSINESS</span>
+              <span class="def-pill">RESPONSIVE</span>
+            </div>
+          </div>
+          <div class="card-info">
+            <h4 class="card-title">Responsive Welding Shop Website</h4>
+            <p class="card-desc">
+              Commercial digital storefront showcasing custom metal fabrication services, dynamic catalog galleries, and direct WhatsApp lead generation for real-time customer orders.
+            </p>
+            <div class="card-stack">
+              <span>HTML5</span>
+              <span>CSS3</span>
+              <span>JavaScript</span>
+              <span>WhatsApp API</span>
+              <span>Neocities</span>
+            </div>
+            <div class="card-actions">
+              <a href="https://priyadharshini33.neocities.org/shop/" target="_blank" rel="noopener" class="card-btn btn-stream">
+                <i class="fa-solid fa-play"></i> Watch Live
+              </a>
+              <button class="card-btn btn-details" onclick="openProjectModal('welding-shop')">
+                <i class="fa-solid fa-circle-info"></i> Details
+              </button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ROW 2: EPISODES & JOURNEY (EXPERIENCE & EDUCATION) -->
+    <section class="shelf-section" id="episodes">
+      <div class="shelf-header">
+        <h2 class="shelf-title">
+          <span class="shelf-highlight">Episodes: Career & Academic Journey</span>
+          <span class="shelf-sub">Season 1: Foundation to Professional Excellence</span>
+        </h2>
+      </div>
+
+      <div class="episodes-container">
+        <!-- EPISODE 1 -->
+        <article class="episode-row">
+          <div class="episode-index">01</div>
+          <div class="episode-thumb" onclick="openCertModal('ether-cert')">
+            <img src="assets/images/certificate-ether.jpg" alt="Ether Infotech Internship Certificate">
+            <span class="play-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i> View Proof</span>
+          </div>
+          <div class="episode-details">
+            <div class="episode-topline">
+              <h3 class="episode-title">Machine Learning Intern — Ether Infotech</h3>
+              <span class="episode-duration"><i class="fa-regular fa-clock"></i> June 2026 • Verified Certificate</span>
+            </div>
+            <p class="episode-synopsis">
+              Executed comprehensive data cleaning, preprocessing, and exploratory visual analysis using R. Engineered predictive machine learning models on structured datasets to extract actionable business patterns. Designed high-impact executive Power BI dashboards for data-driven organizational decision-making and produced structured ML pipelines.
+            </p>
+            <div class="episode-badges">
+              <span class="pill"><i class="fa-solid fa-r"></i> R Language</span>
+              <span class="pill"><i class="fa-solid fa-chart-line"></i> Predictive Modeling</span>
+              <span class="pill"><i class="fa-solid fa-chart-pie"></i> Power BI Dashboards</span>
+              <span class="pill-gold"><i class="fa-solid fa-medal"></i> Grade: Excellent (ID: 613023205034)</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- EPISODE 2 -->
+        <article class="episode-row">
+          <div class="episode-index">02</div>
+          <div class="episode-thumb thumb-college">
+            <div class="edu-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <span class="edu-badge">DEGREE</span>
+          </div>
+          <div class="episode-details">
+            <div class="episode-topline">
+              <h3 class="episode-title">B.Tech in Information Technology — Vivekanandha College of Technology for Women</h3>
+              <span class="episode-duration"><i class="fa-regular fa-calendar"></i> 2023 – 2027 • CGPA: 8.0 / 10.0</span>
+            </div>
+            <p class="episode-synopsis">
+              Mastering core computer science fundamentals, full-stack application development, data structures & algorithms, cloud backend infrastructure, and artificial intelligence architectures. Maintained consistent academic excellence with an 8.0 CGPA.
+            </p>
+            <div class="episode-badges">
+              <span class="pill">Information Technology</span>
+              <span class="pill">Database Engineering</span>
+              <span class="pill">Algorithms</span>
+              <span class="pill-red">CGPA 8.0 / 10.0</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- EPISODE 3 -->
+        <article class="episode-row">
+          <div class="episode-index">03</div>
+          <div class="episode-thumb thumb-hackathon">
+            <div class="edu-icon"><i class="fa-solid fa-trophy"></i></div>
+            <span class="edu-badge">CHAMPION</span>
+          </div>
+          <div class="episode-details">
+            <div class="episode-topline">
+              <h3 class="episode-title">The Arena: Hackathons & National Recognitions</h3>
+              <span class="episode-duration"><i class="fa-solid fa-crown"></i> 2024 – 2026 • Competitive Laurels</span>
+            </div>
+            <p class="episode-synopsis">
+              Secured 1st Place / Winner in the Inter-College Hackathon. Championed the National Level Digital Marketing Competition at Paavai College of Engineering. Active participant in the nationwide SAWIT.AI Learnathon and cutting-edge tech symposiums.
+            </p>
+            <div class="episode-badges">
+              <span class="pill-gold"><i class="fa-solid fa-trophy"></i> Inter-College Hackathon Winner</span>
+              <span class="pill-gold"><i class="fa-solid fa-award"></i> National Digital Marketing Winner</span>
+              <span class="pill"><i class="fa-solid fa-microchip"></i> SAWIT.AI Learnathon</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ROW 3: CAST & CREW (TECHNICAL SKILLS) -->
+    <section class="shelf-section" id="cast-skills">
+      <div class="shelf-header">
+        <h2 class="shelf-title">
+          <span class="shelf-highlight">Cast & Crew: Technical Superpowers</span>
+          <span class="shelf-sub">The Tech Stack Fueling The Productions</span>
+        </h2>
+      </div>
+
+      <div class="skills-genre-grid">
+        <!-- CATEGORY 1: LANGUAGES -->
+        <div class="skill-category-card">
+          <div class="category-header">
+            <i class="fa-solid fa-code"></i>
+            <h3>Languages</h3>
+          </div>
+          <ul class="skill-pill-list">
+            <li><span class="skill-icon"><i class="fa-brands fa-python"></i></span> Python <span class="skill-level">Advanced</span></li>
+            <li><span class="skill-icon"><i class="fa-solid fa-database"></i></span> SQL <span class="skill-level">Proficient</span></li>
+            <li><span class="skill-icon"><i class="fa-solid fa-r"></i></span> R Language <span class="skill-level">Data ML</span></li>
+            <li><span class="skill-icon"><i class="fa-solid fa-c"></i></span> C Language <span class="skill-level">Basics</span></li>
+          </ul>
+        </div>
+
+        <!-- CATEGORY 2: WEB TECHNOLOGIES -->
+        <div class="skill-category-card">
+          <div class="category-header">
+            <i class="fa-solid fa-laptop-code"></i>
+            <h3>Web Technologies</h3>
+          </div>
+          <ul class="skill-pill-list">
+            <li><span class="skill-icon"><i class="fa-brands fa-react"></i></span> React.js <span class="skill-level">Frontend</span></li>
+            <li><span class="skill-icon"><i class="fa-solid fa-bolt"></i></span> FastAPI <span class="skill-level">REST Backend</span></li>
+            <li><span class="skill-icon"><i class="fa-solid fa-cloud"></i></span> Supabase <span class="skill-level">BaaS / DB</span></li>
+            <li><span class="skill-icon"><i class="fa-brands fa-js"></i></span> JavaScript (ES6+) <span class="skill-level">Core</span></li>
+            <li><span class="skill-icon"><i class="fa-brands fa-html5"></i></span> HTML5 & CSS3 <span class="skill-level">Modern UI</span></li>
+            <li><span class="skill-icon"><i class="fa-brands fa-wordpress"></i></span> WordPress <span class="skill-level">CMS</span></li>
+          </ul>
+        </div>
+
+        <!-- CATEGORY 3: TOOLS, PLATFORMS & CLOUD -->
+        <div class="skill-category-card">
+          <div class="category-header">
+            <i class="fa-solid fa-server"></i>
+            <h3>Tools & Cloud Platforms</h3>
+          </div>
+          <ul class="skill-pill-list">
+            <li><span class="skill-icon"><i class="fa-brands fa-git-alt"></i></span> Git & GitHub <span class="skill-level">VCS</span></li>
+            <li><span class="skill-icon"><i class="fa-solid fa-triangle-circle-square"></i></span> Vercel <span class="skill-level">CI/CD Deploy</span></li>
+            <li><span class="skill-icon"><i class="fa-solid fa-globe"></i></span> Netlify & Neocities <span class="skill-level">Hosting</span></li>
+            <li><span class="skill-icon"><i class="fa-solid fa-table"></i></span> SQL Workbench <span class="skill-level">Database</span></li>
+          </ul>
+        </div>
+
+        <!-- CATEGORY 4: DATA ANALYTICS & MACHINE LEARNING -->
+        <div class="skill-category-card">
+          <div class="category-header">
+            <i class="fa-solid fa-brain"></i>
+            <h3>Data Analytics & AI</h3>
+          </div>
+          <ul class="skill-pill-list">
+            <li><span class="skill-icon"><i class="fa-solid fa-chart-pie"></i></span> Power BI <span class="skill-level">Dashboards</span></li>
+            <li><span class="skill-icon"><i class="fa-solid fa-chart-line"></i></span> Predictive Modeling <span class="skill-level">ML Pipelines</span></li>
+            <li><span class="skill-icon"><i class="fa-solid fa-filter"></i></span> Data Preprocessing & EDA <span class="skill-level">Analytics</span></li>
+            <li><span class="skill-icon"><i class="fa-solid fa-file-excel"></i></span> Microsoft Excel & Office <span class="skill-level">Reporting</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ROW 4: AWARDS & CERTIFICATIONS -->
+    <section class="shelf-section" id="certifications">
+      <div class="shelf-header">
+        <h2 class="shelf-title">
+          <span class="shelf-highlight">Critics' Choice: Certifications & Honours</span>
+          <span class="shelf-sub">Verified Industry Credentials & Accolades</span>
+        </h2>
+      </div>
+
+      <div class="cert-grid">
+        <!-- CERT 1: ETHER INFOTECH -->
+        <div class="cert-card" onclick="openCertModal('ether-cert')">
+          <div class="cert-img-wrapper">
+            <img src="assets/images/certificate-ether.jpg" alt="Machine Learning with R Certificate">
+            <div class="cert-zoom-pill"><i class="fa-solid fa-expand"></i> Inspect Certificate</div>
+          </div>
+          <div class="cert-meta">
+            <span class="cert-issuer">Ether Infotech • ISO 9001:2015</span>
+            <h4>Machine Learning with R Internship</h4>
+            <p>Grade: Excellent • Reg No: 613023205034 • Validated hands-on machine learning, EDA, and predictive modeling in R.</p>
+          </div>
+        </div>
+
+        <!-- CERT 2: IBM AI -->
+        <div class="cert-card" onclick="openCertModal('ibm-ai')">
+          <div class="cert-badge-wrapper badge-ibm">
+            <i class="fa-solid fa-brain"></i>
+            <span>IBM CERTIFIED</span>
+          </div>
+          <div class="cert-meta">
+            <span class="cert-issuer">IBM Artificial Intelligence</span>
+            <h4>IBM AI Certification</h4>
+            <p>Comprehensive training on artificial intelligence paradigms, cognitive computing, and real-world ML integration.</p>
+          </div>
+        </div>
+
+        <!-- CERT 3: DIPLOMA IN JAVA -->
+        <div class="cert-card" onclick="openCertModal('diploma-java')">
+          <div class="cert-badge-wrapper badge-java">
+            <i class="fa-brands fa-java"></i>
+            <span>DIPLOMA</span>
+          </div>
+          <div class="cert-meta">
+            <span class="cert-issuer">Technical Institute</span>
+            <h4>Diploma in Java</h4>
+            <p>Strong core and object-oriented programming foundation, memory management, and multi-threaded programming principles.</p>
+          </div>
+        </div>
+
+        <!-- CERT 4: SAWIT.AI -->
+        <div class="cert-card" onclick="openCertModal('sawit-ai')">
+          <div class="cert-badge-wrapper badge-sawit">
+            <i class="fa-solid fa-microchip"></i>
+            <span>LEARNATHON</span>
+          </div>
+          <div class="cert-meta">
+            <span class="cert-issuer">SAWIT.AI Movement</span>
+            <h4>SAWIT.AI Learnathon</h4>
+            <p>National initiative empowering women technologists in artificial intelligence, neural networks, and generative models.</p>
+          </div>
+        </div>
+
+        <!-- CERT 5: HACKATHON WINNER -->
+        <div class="cert-card" onclick="openCertModal('hackathon')">
+          <div class="cert-badge-wrapper badge-trophy">
+            <i class="fa-solid fa-trophy"></i>
+            <span>1ST PLACE</span>
+          </div>
+          <div class="cert-meta">
+            <span class="cert-issuer">Inter-College Hackathon</span>
+            <h4>Inter-College Hackathon Winner</h4>
+            <p>Built high-velocity, winning software prototype under intense timed conditions competing against premier engineering institutions.</p>
+          </div>
+        </div>
+
+        <!-- CERT 6: PAAVAI COLLEGE WINNER -->
+        <div class="cert-card" onclick="openCertModal('paavai')">
+          <div class="cert-badge-wrapper badge-trophy">
+            <i class="fa-solid fa-award"></i>
+            <span>NATIONAL WINNER</span>
+          </div>
+          <div class="cert-meta">
+            <span class="cert-issuer">Paavai College of Engineering</span>
+            <h4>National Digital Marketing Champion</h4>
+            <p>1st Place Winner in national competition assessing analytical data campaigns, user engagement strategy, and conversion optimization.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: CONTACT & CONNECT ("SUBSCRIBE TO TALENT") -->
+    <section class="shelf-section contact-shelf" id="contact">
+      <div class="contact-card-box">
+        <div class="contact-header">
+          <span class="badge-brand"><i class="fa-solid fa-bolt"></i> STREAMING COLLABORATION</span>
+          <h2>Ready To Launch The Next Blockbuster Project?</h2>
+          <p>
+            Currently seeking Full-Time roles, Software Engineering Internships, and Full-Stack / ML Developer positions. Let's build something exceptional together.
+          </p>
+        </div>
+
+        <div class="contact-channels">
+          <!-- EMAIL -->
+          <a href="mailto:priyadharshinis3006@gmail.com" class="channel-card">
+            <div class="channel-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div class="channel-info">
+              <span class="channel-label">Direct Email</span>
+              <strong class="channel-value">priyadharshinis3006@gmail.com</strong>
+            </div>
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+
+          <!-- PHONE -->
+          <a href="tel:+916369804270" class="channel-card">
+            <div class="channel-icon"><i class="fa-solid fa-phone"></i></div>
+            <div class="channel-info">
+              <span class="channel-label">Mobile & WhatsApp</span>
+              <strong class="channel-value">+91 6369804270</strong>
+            </div>
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+
+          <!-- LINKEDIN -->
+          <a href="https://linkedin.com/in/priyadharshinisenthilkumar3006" target="_blank" rel="noopener" class="channel-card">
+            <div class="channel-icon icon-linkedin"><i class="fa-brands fa-linkedin-in"></i></div>
+            <div class="channel-info">
+              <span class="channel-label">LinkedIn Network</span>
+              <strong class="channel-value">in/priyadharshinisenthilkumar3006</strong>
+            </div>
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+
+          <!-- GITHUB -->
+          <a href="https://github.com/Priyadharshini3-pri" target="_blank" rel="noopener" class="channel-card">
+            <div class="channel-icon icon-github"><i class="fa-brands fa-github"></i></div>
+            <div class="channel-info">
+              <span class="channel-label">GitHub Repositories</span>
+              <strong class="channel-value">github.com/Priyadharshini3-pri</strong>
+            </div>
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+
+          <!-- LOCATION -->
+          <div class="channel-card">
+            <div class="channel-icon icon-location"><i class="fa-solid fa-location-dot"></i></div>
+            <div class="channel-info">
+              <span class="channel-label">Location / Base</span>
+              <strong class="channel-value">Tirupattur, Tamil Nadu, India</strong>
+            </div>
+            <i class="fa-solid fa-check"></i>
+          </div>
+        </div>
+
+        <!-- QUICK MESSAGE FORM -->
+        <div class="quick-contact-container">
+          <h3><i class="fa-solid fa-comment-dots"></i> Send a Direct Message</h3>
+          <form id="contactForm" class="contact-form" onsubmit="handleContactSubmit(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contactName">Your Name</label>
+                <input type="text" id="contactName" required placeholder="e.g. John Doe / Tech Recruiter">
+              </div>
+              <div class="form-group">
+                <label for="contactEmail">Your Email</label>
+                <input type="email" id="contactEmail" required placeholder="name@company.com">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="contactSubject">Subject / Opportunity</label>
+              <input type="text" id="contactSubject" required placeholder="Job Opportunity / Project Collaboration">
+            </div>
+            <div class="form-group">
+              <label for="contactMessage">Message</label>
+              <textarea id="contactMessage" rows="4" required placeholder="Hi Priyadharshini, we were impressed by your Tommy Hub and ML work..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-play submit-btn">
+              <i class="fa-solid fa-paper-plane"></i> Transmit Message
+            </button>
+            <div id="formFeedback" class="form-feedback hidden"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="netflix-footer">
+    <div class="footer-socials">
+      <a href="https://linkedin.com/in/priyadharshinisenthilkumar3006" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="https://github.com/Priyadharshini3-pri" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+      <a href="mailto:priyadharshinis3006@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      <a href="tel:+916369804270" aria-label="Phone"><i class="fa-solid fa-phone"></i></a>
+    </div>
+    <div class="footer-links">
+      <a href="#hero">Audio Description</a>
+      <a href="#cast-skills">Technical Stack</a>
+      <a href="#episodes">Career Episodes</a>
+      <a href="#certifications">Verified Credentials</a>
+      <a href="#originals">Originals Live Demos</a>
+      <a href="#contact">Investor Relations & Hiring</a>
+    </div>
+    <div class="service-code-box">
+      <span class="service-code">SERVICE CODE: PRIYA-2026-SERIES</span>
+    </div>
+    <p class="footer-copyright">
+      &copy; 2026 Priyadharshini S. Crafted with cinematic passion, inspired by modern streaming design standards. All rights reserved.
+    </p>
+  </footer>
+
+  <!-- ================= MODALS ================= -->
+
+  <!-- NETFLIX-STYLE PROJECT DETAIL MODAL -->
+  <div id="projectModal" class="modal-backdrop hidden" onclick="handleBackdropClick(event)">
+    <div class="modal-content netflix-modal">
+      <button class="modal-close" onclick="closeModal('projectModal')">&times;</button>
+      <div id="modalDynamicBody">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- CERTIFICATE & PROOF MODAL -->
+  <div id="certModal" class="modal-backdrop hidden" onclick="handleBackdropClick(event)">
+    <div class="modal-content cert-modal-content">
+      <button class="modal-close" onclick="closeModal('certModal')">&times;</button>
+      <div class="cert-modal-body">
+        <h3 id="certModalTitle" class="cert-title">Verified Certificate</h3>
+        <p id="certModalSubtitle" class="cert-sub">Ether Infotech • Machine Learning With R</p>
+        <div class="cert-modal-img-container">
+          <img id="certModalImg" src="assets/images/certificate-ether.jpg" alt="Certificate Preview">
+        </div>
+        <div class="cert-modal-footer">
+          <a id="certDownloadLink" href="assets/images/certificate-ether.jpg" download="Priyadharshini_Ether_Infotech_Certificate.jpg" class="btn btn-play">
+            <i class="fa-solid fa-download"></i> Download Full Resolution Certificate
+          </a>
+          <button class="btn btn-more-info" onclick="closeModal('certModal')">Close Preview</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESUME MODAL -->
+  <div id="resumeModal" class="modal-backdrop hidden" onclick="handleBackdropClick(event)">
+    <div class="modal-content resume-modal-content">
+      <button class="modal-close" onclick="closeModal('resumeModal')">&times;</button>
+      <div class="resume-sheet">
+        <div class="resume-header">
+          <div>
+            <h2>PRIYADHARSHINI S</h2>
+            <p>Tirupattur, Tamil Nadu | +91 6369804270 | priyadharshinis3006@gmail.com</p>
+            <p>LinkedIn: linkedin.com/in/priyadharshinisenthilkumar3006 | GitHub: github.com/Priyadharshini3-pri</p>
+          </div>
+          <button onclick="window.print()" class="btn btn-play print-btn">
+            <i class="fa-solid fa-print"></i> Print / Save PDF
+          </button>
+        </div>
+
+        <div class="resume-body-content">
+          <section class="resume-sec">
+            <h3>SUMMARY</h3>
+            <p>Motivated and detail-oriented Information Technology undergraduate with technical expertise across Full-Stack Web Development, Machine Learning, and Data Analytics. Passionate about leveraging modern technologies to build scalable web applications, AI-driven solutions, and robust retail billing systems. Possesses strong analytical, problem-solving, and software development capabilities with proficiency in Python, React, FastAPI, SQL, and Power BI.</p>
+          </section>
+
+          <section class="resume-sec">
+            <h3>SKILLS</h3>
+            <p><strong>Languages:</strong> Python, SQL, C (Basics), R</p>
+            <p><strong>Web Technologies:</strong> React, FastAPI, WordPress, HTML, CSS, JavaScript, Supabase</p>
+            <p><strong>Tools & Platforms:</strong> Git, GitHub, Vercel, Netlify, SQL Workbench, Power BI, Excel, Microsoft Office</p>
+          </section>
+
+          <section class="resume-sec">
+            <h3>EXPERIENCE</h3>
+            <div class="res-item">
+              <strong>Machine Learning Intern | Ether Infotech</strong> <em>(June 2026)</em>
+              <ul>
+                <li>Performed comprehensive data cleaning, preprocessing, and exploratory visual analysis using R.</li>
+                <li>Built, trained, and evaluated predictive machine learning models on structured datasets to extract key insights.</li>
+                <li>Designed interactive Power BI dashboards and executive analytical reports for data-driven decision-making.</li>
+                <li>Collaborated on industry-standard ML workflows and produced structured project documentation.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section class="resume-sec">
+            <h3>PROJECTS</h3>
+            <div class="res-item">
+              <strong>TOMMY HUB Billing Terminal</strong> | <em>React, FastAPI, Python, Supabase, Vercel</em>
+              <p>Developed a full-stack retail billing and invoice generation application supporting multiple custom payment modes (Cash, UPI, Card). Integrated Supabase cloud backend database and deployed on Vercel, enabling automated, printable invoice generation across responsive desktop, tablet, and mobile interfaces.</p>
+            </div>
+            <div class="res-item">
+              <strong>AI-Based Tourist Trip Planner & Chatbot</strong> | <em>HTML, CSS, JavaScript, AI API, Netlify</em>
+              <p>Developed a responsive web application that generates personalized, multi-day travel itineraries and real-time smart conversational suggestions based on user preferences.</p>
+            </div>
+            <div class="res-item">
+              <strong>Responsive Welding Shop Website</strong> | <em>HTML, CSS, JavaScript, Neocities</em>
+              <p>Designed a fully responsive business website showcasing custom fabrication services and product catalogs with direct WhatsApp enquiry integration to streamline client communication and generate leads.</p>
+            </div>
+          </section>
+
+          <section class="resume-sec">
+            <h3>EDUCATION</h3>
+            <p><strong>B.Tech, Information Technology</strong> | Vivekanandha College of Technology for Women (2023–2027) | <strong>CGPA: 8.0 / 10.0</strong></p>
+          </section>
+
+          <section class="resume-sec">
+            <h3>CERTIFICATIONS & ACHIEVEMENTS</h3>
+            <ul>
+              <li>IBM AI Artificial Intelligence Certification</li>
+              <li>Machine Learning with R – Ether Infotech (Grade: Excellent)</li>
+              <li>Diploma in Java</li>
+              <li>SAWIT.AI Learnathon</li>
+              <li>Winner – Inter-College Hackathon</li>
+              <li>Winner – National Level Digital Marketing Competition (Paavai College of Engineering)</li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toastNotification" class="toast-box hidden">
+    <i class="fa-solid fa-bell"></i>
+    <span id="toastMessage">Added to your watchlist!</span>
+  </div>
+
+  <!-- Core JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
